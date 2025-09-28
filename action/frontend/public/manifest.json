@@ -1,0 +1,21 @@
+{
+  "name": "MaskedAttendance - 隐私保护出勤系统",
+  "short_name": "MaskedAttendance",
+  "description": "基于FHEVM的学生出勤数据加密管理系统，保护隐私，确保数据安全。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["education", "productivity", "utilities"],
+  "lang": "zh-CN",
+  "scope": "/",
+  "id": "maskedattendance"
+}

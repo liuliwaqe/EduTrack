@@ -1,0 +1,337 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全局样式重置 */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-blue-50 via-white to-green-50 min-h-screen;
+    @apply text-gray-900 antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* 自定义滚动条 */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+/* 组件样式 */
+@layer components {
+  /* 卡片样式 */
+  .card {
+    @apply bg-white rounded-xl shadow-lg border border-gray-100;
+    @apply transition-all duration-300 ease-in-out;
+    @apply hover:shadow-xl hover:scale-[1.02];
+  }
+
+  .card-header {
+    @apply p-6 border-b border-gray-100;
+  }
+
+  .card-body {
+    @apply p-6;
+  }
+
+  .card-footer {
+    @apply p-6 border-t border-gray-100 bg-gray-50 rounded-b-xl;
+  }
+
+  /* 按钮样式 */
+  .btn {
+    @apply inline-flex items-center justify-center;
+    @apply px-4 py-2 rounded-lg font-medium;
+    @apply transition-all duration-200 ease-in-out;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white;
+    @apply hover:bg-primary-700 focus:ring-primary-500;
+    @apply shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700;
+    @apply hover:bg-gray-200 focus:ring-gray-500;
+  }
+
+  .btn-success {
+    @apply bg-success-600 text-white;
+    @apply hover:bg-success-700 focus:ring-success-500;
+  }
+
+  .btn-warning {
+    @apply bg-warning-500 text-white;
+    @apply hover:bg-warning-600 focus:ring-warning-500;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 text-white;
+    @apply hover:bg-red-700 focus:ring-red-500;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-lg;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+
+  /* 输入框样式 */
+  .input {
+    @apply block w-full px-3 py-2;
+    @apply border border-gray-300 rounded-lg;
+    @apply focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+    @apply transition-colors duration-200;
+    @apply placeholder-gray-400;
+  }
+
+  .input-error {
+    @apply border-red-300 focus:ring-red-500 focus:border-red-500;
+  }
+
+  /* 标签样式 */
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  /* 状态指示器 */
+  .status-indicator {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-success {
+    @apply bg-success-100 text-success-800;
+  }
+
+  .status-warning {
+    @apply bg-warning-100 text-warning-800;
+  }
+
+  .status-error {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .status-info {
+    @apply bg-primary-100 text-primary-800;
+  }
+
+  /* 加载动画 */
+  .loading-spinner {
+    @apply animate-spin rounded-full border-2 border-gray-200;
+    border-top-color: theme('colors.primary.600');
+  }
+
+  /* 教育主题样式 */
+  .education-gradient {
+    @apply bg-gradient-to-r from-education-blue to-education-green;
+  }
+
+  .education-pattern {
+    @apply bg-education-pattern;
+  }
+
+  /* 课程卡片特殊样式 */
+  .course-card {
+    @apply card relative overflow-hidden;
+  }
+
+  .course-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1;
+    @apply bg-gradient-to-r from-education-blue to-education-green;
+  }
+
+  /* 出勤状态样式 */
+  .attendance-present {
+    @apply bg-success-50 border-success-200 text-success-800;
+  }
+
+  .attendance-absent {
+    @apply bg-red-50 border-red-200 text-red-800;
+  }
+
+  .attendance-unknown {
+    @apply bg-gray-50 border-gray-200 text-gray-600;
+  }
+
+  /* 统计图表容器 */
+  .chart-container {
+    @apply bg-white rounded-lg p-4 shadow-sm border border-gray-100;
+  }
+
+  /* 响应式网格 */
+  .responsive-grid {
+    @apply grid gap-6;
+    @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+
+  /* 移动端优化 */
+  .mobile-friendly {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* 错误状态 */
+  .error-container {
+    @apply bg-red-50 border border-red-200 rounded-lg p-4;
+  }
+
+  .error-title {
+    @apply text-red-800 font-medium text-sm;
+  }
+
+  .error-message {
+    @apply text-red-700 text-sm mt-1;
+  }
+
+  /* 成功状态 */
+  .success-container {
+    @apply bg-success-50 border border-success-200 rounded-lg p-4;
+  }
+
+  .success-title {
+    @apply text-success-800 font-medium text-sm;
+  }
+
+  .success-message {
+    @apply text-success-700 text-sm mt-1;
+  }
+
+  /* 信息提示 */
+  .info-container {
+    @apply bg-primary-50 border border-primary-200 rounded-lg p-4;
+  }
+
+  .info-title {
+    @apply text-primary-800 font-medium text-sm;
+  }
+
+  .info-message {
+    @apply text-primary-700 text-sm mt-1;
+  }
+
+  /* 空状态 */
+  .empty-state {
+    @apply text-center py-12;
+  }
+
+  .empty-state-icon {
+    @apply mx-auto h-12 w-12 text-gray-400 mb-4;
+  }
+
+  .empty-state-title {
+    @apply text-lg font-medium text-gray-900 mb-2;
+  }
+
+  .empty-state-description {
+    @apply text-gray-600 mb-6;
+  }
+}
+
+/* 工具类 */
+@layer utilities {
+  /* 文本渐变 */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-success-600 bg-clip-text text-transparent;
+  }
+
+  /* 玻璃态效果 */
+  .glass {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
+  }
+
+  /* 阴影变体 */
+  .shadow-colored {
+    box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.15);
+  }
+
+  /* 动画类 */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  /* 自定义动画定义 */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* 截断文本 */
+  .truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .no-print {
+    @apply hidden;
+  }
+  
+  .print-only {
+    @apply block;
+  }
+  
+  body {
+    @apply bg-white;
+  }
+  
+  .card {
+    @apply shadow-none border border-gray-300;
+  }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  /* 如果需要深色模式支持，可以在这里添加样式 */
+}

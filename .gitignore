@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Next.js
+.next/
+out/
+.vercel/
+
+# Builds
+dist/
+build/
+coverage/
+
+# Caches
+.cache/
+.cache-loader/
+.turbo/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env
+.env
+.env.*
+
+# OS
+.DS_Store
+
+# Hardhat (artifacts/cache generated at build time)
+action/contracts/artifacts/
+action/contracts/cache/
+action/contracts/coverage/
+
+

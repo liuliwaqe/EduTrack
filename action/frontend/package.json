@@ -1,0 +1,58 @@
+{
+  "name": "masked-attendance-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend for MaskedAttendance - FHEVM privacy attendance system",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "dev:mock": "npm run genabi && next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "genabi": "node scripts/genabi.mjs",
+    "clean": "rimraf .next"
+  },
+  "dependencies": {
+    "@zama-fhe/relayer-sdk": "0.2.0",
+    "antd": "^5.12.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "ethers": "^6.13.0",
+    "idb": "^8.0.0",
+    "next": "^15.1.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss-animate": "^1.0.7",
+    "lucide-react": "^0.294.0",
+    "date-fns": "^3.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@fhevm/mock-utils": "0.1.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.0",
+    "postcss": "^8",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "fhevm",
+    "react",
+    "nextjs",
+    "attendance",
+    "privacy",
+    "blockchain",
+    "education"
+  ],
+  "author": "MaskedAttendance Team",
+  "license": "MIT"
+}
